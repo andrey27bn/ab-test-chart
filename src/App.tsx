@@ -8,7 +8,7 @@ import {
 	Tooltip,
 	ResponsiveContainer,
 } from 'recharts'
-import type { TooltipProps, Payload } from 'recharts'
+// import type { TooltipProps } from 'recharts'
 
 import { processData, COLORS } from './utils'
 import { ChartControls } from './components/ChartControls'
@@ -18,25 +18,36 @@ import './App.css'
 
 const rawData = rawDataFile as RawData
 
-// Компонент Тултипа
+interface CustomTooltipProps {
+    active?: boolean
+    payload?: Array<{
+        name: string
+        value: number | string
+        color: string
+    }>
+    label?: string | number
+}
+
+
+// Компонент Тултипа (теперь использует CustomTooltipProps)
 const CustomTooltip = ({
-	active,
-	payload,
-	label,
-}: TooltipProps<any, any>) => { 
-	if (active && payload && payload.length) {
-		return (
-			<div className='custom-tooltip'>
-				<p className='tooltip-date'>{label}</p>
-				{payload.map((entry: Payload<any, any>) => (
-					<div key={entry.name} style={{ color: entry.color }}>
-						{entry.name}: <strong>{entry.value}%</strong>
-					</div>
-				))}
-			</div>
-		)
-	}
-	return null
+    active,
+    payload, 
+    label,
+}: CustomTooltipProps) => { 
+    if (active && payload && payload.length) {
+        return (
+            <div className='custom-tooltip'>
+                <p className='tooltip-date'>{label}</p>
+                {payload.map((entry: any) => ( 
+                    <div key={entry.name} style={{ color: entry.color }}>
+                        {entry.name}: <strong>{entry.value}%</strong>
+                    </div>
+                ))}
+            </div>
+        )
+    }
+    return null
 }
 
 const App: React.FC = () => {

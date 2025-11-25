@@ -8,7 +8,7 @@ import {
 	Tooltip,
 	ResponsiveContainer,
 } from 'recharts'
-import type { TooltipProps } from 'recharts'
+import type { TooltipProps, Payload } from 'recharts'
 
 import { processData, COLORS } from './utils'
 import { ChartControls } from './components/ChartControls'
@@ -23,12 +23,12 @@ const CustomTooltip = ({
 	active,
 	payload,
 	label,
-}: TooltipProps<number, string>) => {
+}: TooltipProps<any, any>) => { 
 	if (active && payload && payload.length) {
 		return (
 			<div className='custom-tooltip'>
 				<p className='tooltip-date'>{label}</p>
-				{payload.map(entry => (
+				{payload.map((entry: Payload<any, any>) => (
 					<div key={entry.name} style={{ color: entry.color }}>
 						{entry.name}: <strong>{entry.value}%</strong>
 					</div>

@@ -1,0 +1,51 @@
+.controlsContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  gap: 15px;
+  
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.label {
+  font-weight: 600;
+  color: #333;
+}
+
+.toggleGroup .btn {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+
+.toggleGroup .btn:first-child { border-radius: 4px 0 0 4px; }
+.toggleGroup .btn:last-child { border-radius: 0 4px 4px 0; }
+.toggleGroup .btn.active {
+  background: #3366FF;
+  color: white;
+  border-color: #3366FF;
+}
+
+.checkboxGroup {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}

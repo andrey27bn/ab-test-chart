@@ -3,7 +3,7 @@
 This project visualizes A/B test statistics using an interactive Line Chart. It allows users to analyze Conversion Rates across different variations over time.
 
 ## 🚀 Demo
-[Link to your GitHub Pages Demo]
+(https://andrey27bn.github.io/ab-test-chart/)
 
 ## 🛠 Tech Stack
 - **React** (v18)
@@ -69,4 +69,4 @@ To create a production build and deploy:
     npm run deploy
     ```
 
-The live demo is available at: [Link to your GitHub Pages Demo]
+The live demo is available at: (https://andrey27bn.github.io/ab-test-chart/)

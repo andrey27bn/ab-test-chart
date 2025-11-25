@@ -63,7 +63,7 @@ To create a production build and deploy:
     ```bash
     npm run build
     ```
-2.  **Deploy using `gh-pages` (if configured in `package.json`) or manually:**
+2.  **Deploy using `gh-pages`:**
     
     ```bash
     npm run deploy
